@@ -67,7 +67,7 @@ You can author your own DMFR using the [DMFR schema](https://dmfr.transit.land/j
 
 Below is a minimal example:
 
-```json
+```jsonc
 // dmfr.json
 {
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
@@ -112,7 +112,7 @@ Some feeds require authentication. Provide a secrets file with the `--secrets` f
 
 Below is a minimal example:
 
-```json
+```jsonc
 // secrets.json
 [
   {
@@ -139,7 +139,7 @@ out/
   manifest.json
 ```
 
-```json
+```jsonc
 // out/manifest.json
 {
   "feeds": [
