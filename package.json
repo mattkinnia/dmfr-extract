@@ -1,6 +1,6 @@
 {
   "name": "dmfr-extract",
-  "description": "A CLI utility for extracting GTFS feeds described by a DMFR to your local file system or S3-compatible storage.",
+  "description": "A small command-line utility for extracting GTFS feeds described by a Distributed Mobility Feed Registry.",
   "private": true,
   "type": "module",
   "bin": {
