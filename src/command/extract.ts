@@ -9,6 +9,7 @@ import {
 } from "@/core/dmfr";
 import { extract } from "@/core/extract";
 import type { Manifest } from "@/core/type";
+import consola from "consola";
 
 export default async function run(argv: string[]) {
   const cli = meow(
@@ -107,6 +108,8 @@ export default async function run(argv: string[]) {
     extracted_at: new Date(),
   };
 
+  consola.start(`Extracting ${feeds.length} feed(s)`);
+
   for (const feed of feeds) {
     const manifestEntry = await extract({
       feed,
@@ -119,4 +122,6 @@ export default async function run(argv: string[]) {
   }
 
   await Bun.write(`${storage}/manifest.json`, JSON.stringify(manifest));
+
+  consola.success("Done");
 }
