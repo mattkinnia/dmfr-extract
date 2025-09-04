@@ -45,6 +45,7 @@ Run the compiled binary directly:
 
 ```bash
   Usage
+
     $ dmfr-extract extract [options] <path>
 
   Options
