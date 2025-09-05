@@ -52,8 +52,8 @@ Run the compiled binary directly:
 
     --secrets             Path to secrets
     --storage             Path to storage directory (default: "out")
-    --spec                Extract feeds by spec
-    --operator-id         Extract feeds by operator id
+    --feed-spec           Extract feeds by spec
+    --feed-operator-id    Extract feeds by operator id
     --feed-id             Extract feeds by id
     --[no-]gtfs-rt-parse  Parse GTFS-RT Protocol Buffers into JSON
 
@@ -171,7 +171,7 @@ out/
       }
     }
   ],
-  "extracted_at": "YYYY-MM-DDTHH:MM:SSZ"
+  "extracted_at": "2025-09-05T02:32:16.538Z"
 }
 ```
 
