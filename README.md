@@ -175,16 +175,22 @@ out/
 }
 ```
 
-## S3-compatible storage
+## S3-Compatible Storage
 
-Path arguments accept the `s3://` protocol. Configure the standard S3 variables in your environment:
+Path arguments support the `s3://` scheme. Configure the following environment variables:
 
 - `S3_ACCESS_KEY_ID`
 - `S3_SECRET_ACCESS_KEY`
 - `S3_REGION`
-- `S3_ENDPOINT` (e.g. for providers like MinIO or Cloudflare R2)
+- `S3_ENDPOINT` (for non-AWS providers; e.g., MinIO or Cloudflare R2)
 - `S3_BUCKET`
-- `S3_SESSION_TOKEN`
+- `S3_SESSION_TOKEN` (optional)
+
+Example `s3://` usage:
+
+```bash
+$ dmfr-extract extract s3://<my-bucket>/dmfr.json --storage s3://<my-bucket>/out
+```
 
 ## Related
 
