@@ -5,7 +5,7 @@ const cli = meow(
   `
   Usage
 
-    $ dmfr-extract <command> [...options]
+    $ dmfr-extract <command>
   `,
   {
     importMeta: import.meta,
