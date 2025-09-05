@@ -22,8 +22,8 @@ export default async function run(argv: string[]) {
 
       --secrets             Path to secrets
       --storage             Path to storage directory (default: "out")
-      --spec                Extract feeds by spec
-      --operator-id         Extract feeds by operator id
+      --feed-spec           Extract feeds by spec
+      --feed-operator-id    Extract feeds by operator id
       --feed-id             Extract feeds by id
       --[no-]gtfs-rt-parse  Parse GTFS-RT Protocol Buffers into JSON
 
@@ -42,11 +42,11 @@ export default async function run(argv: string[]) {
           type: "string",
           default: "out",
         },
-        spec: {
+        feedSpec: {
           type: "string",
           choices: ["gtfs", "gtfs-rt"],
         },
-        operatorId: {
+        feedOperatorId: {
           type: "string",
         },
         feedId: {
@@ -68,26 +68,26 @@ export default async function run(argv: string[]) {
     path: cli.input[0],
   });
 
-  const { storage, spec, operatorId, feedId, gtfsRtParse } = cli.flags;
+  const { storage, feedSpec, feedOperatorId, feedId, gtfsRtParse } = cli.flags;
 
-  if (spec) {
+  if (feedSpec) {
     dmfr.feeds = getFeedsBySpec({
       dmfr,
-      spec,
+      spec: feedSpec,
     });
   }
 
-  if (operatorId) {
+  if (feedOperatorId) {
     dmfr.feeds = getFeedsByOperatorId({
       dmfr,
-      operatorId,
+      operatorId: feedOperatorId,
     });
   }
 
   if (feedId) {
     const feed = getFeedById({
       dmfr,
-      feedId,
+      id: feedId,
     });
 
     dmfr.feeds = feed ? [feed] : [];

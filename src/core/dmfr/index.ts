@@ -11,15 +11,9 @@ export const getFeeds = ({ dmfr }: { dmfr: Dmfr }) => {
   return dmfr.feeds ?? [];
 };
 
-export const getFeedById = ({
-  dmfr,
-  feedId,
-}: {
-  dmfr: Dmfr;
-  feedId: string;
-}) => {
+export const getFeedById = ({ dmfr, id }: { dmfr: Dmfr; id: string }) => {
   return getFeeds({ dmfr }).find((feed) => {
-    return feed.id === feedId || feed.supersedes_ids?.includes(feedId);
+    return feed.id === id || feed.supersedes_ids?.includes(id);
   });
 };
 
@@ -98,7 +92,7 @@ export const getFeedsByOperatorId = ({
   for (const feedId of feedIds) {
     const feed = getFeedById({
       dmfr,
-      feedId,
+      id: feedId,
     });
 
     if (!feed) {
