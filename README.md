@@ -74,15 +74,15 @@ Below is a minimal example:
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-example~01",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://example.com/gtfs.zip"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-example~01~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "http://api.example.com/v1/realtime_vehicle_positions",
         "realtime_trip_updates": "http://api.example.com/v1/realtime_trip_updates",
@@ -189,7 +189,7 @@ Path arguments support the `s3://` scheme. Configure the following environment v
 Example `s3://` usage:
 
 ```bash
-$ dmfr-extract extract s3://<my-bucket>/dmfr.json --storage s3://<my-bucket>/out
+$ dmfr-extract extract --storage s3://<my-bucket>/out s3://<my-bucket>/dmfr.json
 ```
 
 ## Related
